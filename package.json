@@ -7,7 +7,9 @@
   "author": "Dylan Santiago",
   "license": "ISC",
   "scripts": {
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc -p tsconfig-buid.json",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "module-alias": "^2.2.2",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@types/module-alias": "^2.0.1",
     "@types/node": "^18.11.17",
+    "eslint-config-standard-with-typescript": "^24.0.0",
     "typescript": "^4.9.4"
   },
   "engines": {
