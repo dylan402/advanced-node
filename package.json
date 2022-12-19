@@ -9,16 +9,22 @@
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig-buid.json",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest --passWithNoTests --no-cache --runInBand",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage"
   },
   "dependencies": {
     "module-alias": "^2.2.2",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
+    "@types/jest": "^29.2.4",
     "@types/module-alias": "^2.0.1",
     "@types/node": "^18.11.17",
     "eslint-config-standard-with-typescript": "^24.0.0",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.9.4"
   },
   "engines": {
