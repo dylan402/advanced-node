@@ -14,11 +14,12 @@ export class FacebookAuthenticationService {
 
     if (facebookData) {
       const accountData = await this.userAccountRepository.load({ email: facebookData.email })
-      if (accountData?.name) {
+
+      if (accountData) {
         await this.userAccountRepository.updateWithFacebook({
           id: accountData.id,
           facebookId: facebookData.facebookId,
-          name: accountData.name
+          name: accountData.name ?? facebookData.name
         })
       } else {
         await this.userAccountRepository.createFromFacebook(facebookData)
